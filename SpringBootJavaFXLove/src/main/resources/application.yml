@@ -1,0 +1,7 @@
+spring:
+    jmx:
+        enabled: false
+javafx:
+  title: Spring Boot + JavaFX = Love
+  stage:
+    resizable: false
