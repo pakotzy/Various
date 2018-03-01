@@ -1,0 +1,25 @@
+features:
+- !!com.pakotzy.various.feature.Binder
+  events:
+  - !!com.pakotzy.various.event.GenericEvent
+    hotKey: C
+    action: QERT;4
+    enabled: true
+- !!com.pakotzy.various.feature.Writer
+  events:
+  - !!com.pakotzy.various.event.GenericEvent
+    action: /afk Wife's home. On duty!
+    hotKey: SHIFT+S
+    enabled: true
+  - !!com.pakotzy.various.event.GenericEvent
+    action: /disconnect
+    hotKey: SHIFT+Q
+    enabled: true
+- !!com.pakotzy.various.feature.Crafter
+  events:
+  - !!com.pakotzy.various.event.CrafterEvent
+    hotKey: SHIFT+S
+    enabled: false
+    links: 6
+    sockets: 6
+    colors: R-B-G-R G-B
