@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Client implements Observer {
 	private List<Show> shows = new ArrayList<>();
-	private UpdateServer updateServer;
+	private Observable updateServer;
 
-	public Client(UpdateServer updateServer) {
+	public Client(Observable updateServer) {
 		this.updateServer = updateServer;
 		updateServer.registerObserver(this);
 
@@ -22,7 +22,7 @@ public class Client implements Observer {
 	}
 
 	private void requestUpdate() {
-		shows = updateServer.getShows(shows.stream().map(Show::getName).toArray(String[]::new));
+		shows = ((UpdateServer) updateServer).getShows(shows.stream().map(Show::getName).toArray(String[]::new));
 	}
 
 	@Override
