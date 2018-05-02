@@ -22,7 +22,11 @@ public class Client implements Observer {
 	}
 
 	private void requestUpdate() {
-		shows = ((UpdateServer) updateServer).getShows(shows.stream().map(Show::getName).toArray(String[]::new));
+		if (updateServer instanceof UpdateServer) {
+			shows = ((UpdateServer) updateServer).getShows(shows.stream().map(Show::getName).toArray(String[]::new));
+		} else {
+			System.out.println("You're fucked!");
+		}
 	}
 
 	@Override
