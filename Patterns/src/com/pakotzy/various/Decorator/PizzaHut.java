@@ -3,7 +3,7 @@ package com.pakotzy.various.Decorator;
 public class PizzaHut extends Pizza {
 
 	public PizzaHut(Size size) {
-		this.description = "PizzHut";
+		this.description = "PizzaHut";
 		this.size = size;
 	}
 
