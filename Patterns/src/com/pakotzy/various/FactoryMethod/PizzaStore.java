@@ -10,5 +10,5 @@ public abstract class PizzaStore {
 		return create(pizzaTypes);
 	}
 
-	abstract Pizza create(String... pizzaTypes);
+	public abstract Pizza create(String... pizzaTypes);
 }

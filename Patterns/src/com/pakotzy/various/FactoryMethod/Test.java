@@ -11,7 +11,7 @@ public class Test {
 		printPizza(buttPizza.order("cheese", "gold"));
 	}
 
-	private static void printPizza(Pizza pizza) {
+	public static void printPizza(Pizza pizza) {
 		System.out.println(pizza.getDesctiprion());
 	}
 }
