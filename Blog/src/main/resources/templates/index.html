@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout::site-head">
+	<meta charset="UTF-8">
+	<title>Blog LALALA</title>
+</head>
+<body>
+	<header th:replace="layout::site-header"/>
+	<h1>Welcome to Spring MVC</h1>
+	Now is: <b th:text="${execInfo.now.time}"></b>
+
+	<footer th:replace="layout::site-footer"/>
+</body>
+</html>
