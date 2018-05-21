@@ -35,12 +35,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.openstreetmap.osmosis</groupId>
-			<artifactId>osmosis-pbf</artifactId>
-			<version>0.46</version>
-		</dependency>
-
-		<dependency>
 			<groupId>de.westnordost</groupId>
 			<artifactId>osmapi</artifactId>
 			<version>1.7</version>
