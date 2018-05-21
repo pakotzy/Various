@@ -69,3 +69,8 @@ ul#messages li.error {
 	display: inline-block;
 	margin-right: 10px;
 }
+
+.formError {
+	color:red;
+	font-style: italic;
+}
