@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.pakotzy.various</groupId>
+	<artifactId>OsmAndExercise</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.openstreetmap.osmosis</groupId>
+			<artifactId>osmosis-core</artifactId>
+			<version>0.46</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.openstreetmap.osmosis</groupId>
+			<artifactId>osmosis-xml</artifactId>
+			<version>0.46</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openstreetmap.osmosis</groupId>
+			<artifactId>osmosis-pbf</artifactId>
+			<version>0.46</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.westnordost</groupId>
+			<artifactId>osmapi</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+
+
+		<!--compile 'de.topobyte:osm4j-core:0.1.0'-->
+		<!--compile 'de.topobyte:osm4j-utils:0.1.2'-->
+		<!--compile 'de.topobyte:osm4j-xml:0.1.2'-->
+		<!--compile 'de.topobyte:osm4j-pbf:0.1.1'-->
+		<!--compile 'de.topobyte:osm4j-tbo:0.1.0'-->
+		<!--compile 'de.topobyte:osm4j-geometry:0.1.0'-->
+
+	</dependencies>
+
+</project>
