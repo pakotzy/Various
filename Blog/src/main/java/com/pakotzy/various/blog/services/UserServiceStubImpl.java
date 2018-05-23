@@ -11,4 +11,9 @@ public class UserServiceStubImpl implements UserService {
 	public boolean authenticate(String username, String password) {
 		return Objects.equals(username, password);
 	}
+
+	@Override
+	public boolean register(String usernmae, String password) {
+		return authenticate(usernmae, password);
+	}
 }
