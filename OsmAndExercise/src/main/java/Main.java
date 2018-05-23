@@ -1,16 +1,22 @@
 import de.westnordost.osmapi.OsmConnection;
 import de.westnordost.osmapi.map.MapDataDao;
+import de.westnordost.osmapi.map.data.BoundingBox;
+import de.westnordost.osmapi.map.data.Node;
+import de.westnordost.osmapi.map.data.Relation;
+import de.westnordost.osmapi.map.data.Way;
+import de.westnordost.osmapi.map.handler.MapDataHandler;
 import org.openstreetmap.osmosis.core.container.v0_6.EntityContainer;
 import org.openstreetmap.osmosis.core.domain.v0_6.Tag;
 import org.openstreetmap.osmosis.core.task.v0_6.Sink;
 import org.openstreetmap.osmosis.xml.v0_6.XmlDownloader;
 
+import java.util.List;
 import java.util.Map;
 
 public class Main implements Sink {
-//	private final OsmConnection connection =
-//			new OsmConnection("https://api.openstreetmap.org/api/0.6/", "java");
-//	private final MapDataDao mapDAO = new MapDataDao(connection);
+	private final OsmConnection connection =
+			new OsmConnection("https://api.openstreetmap.org/api/0.6/", "java");
+	private final MapDataDao mapDAO = new MapDataDao(connection);
 
 	public static void main(String[] args) {
 		XmlDownloader downloader = new XmlDownloader(153.5022, 153.3492, -27.8459, -27.9165,
@@ -29,6 +35,7 @@ public class Main implements Sink {
 			switch (tag.getKey()) {
 				case "amenity":
 				case "building":
+				case "landuse":
 					isArea = true;
 					break;
 				case "name":
@@ -39,6 +46,19 @@ public class Main implements Sink {
 		if (isArea) {
 			System.out.println("-----------");
 			System.out.println(areaName);
+
+			List<Way> waysForNode = mapDAO.getWaysForNode(entityContainer.getEntity().getId());
+			if (!waysForNode.isEmpty()) {
+				for (Way way : waysForNode) {
+					List<Long> nodeIds = way.getNodeIds();
+					if (!nodeIds.isEmpty()) {
+						for (Long id : nodeIds) {
+							Node node = mapDAO.getNode(id);
+							System.out.println(node.getPosition().getLatitude() + " - " + node.getPosition().getLongitude());
+						}
+					}
+				}
+			}
 
 //			List<Relation> relationsForNode = mapDAO.getRelationsForNode(entityContainer.getEntity().getId());
 //			for (Relation relation : relationsForNode) {
@@ -76,26 +96,26 @@ public class Main implements Sink {
 //		System.out.println(4);
 	}
 
-//	private class DataHandler implements MapDataHandler {
-//
-//		@Override
-//		public void handle(BoundingBox boundingBox) {
-//
-//		}
-//
-//		@Override
-//		public void handle(Node node) {
-//
-//		}
-//
-//		@Override
-//		public void handle(Way way) {
-//
-//		}
-//
-//		@Override
-//		public void handle(Relation relation) {
-//
-//		}
-//	}
+	private class DataHandler implements MapDataHandler {
+
+		@Override
+		public void handle(BoundingBox boundingBox) {
+
+		}
+
+		@Override
+		public void handle(Node node) {
+
+		}
+
+		@Override
+		public void handle(Way way) {
+
+		}
+
+		@Override
+		public void handle(Relation relation) {
+
+		}
+	}
 }
