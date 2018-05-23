@@ -6,7 +6,9 @@ import com.pakotzy.various.blog.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -42,5 +44,17 @@ public class PostsController {
 
 		model.addAttribute("posts", posts);
 		return "posts/index";
+	}
+
+	@PostMapping("/posts/view/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		try {
+			postService.deleteById(id);
+		} catch (RuntimeException ex) {
+			notifyService.addErrorMessage("No post found");
+		}
+
+		notifyService.addInfoMessage("Deletion Successful");
+		return "redirect:/";
 	}
 }

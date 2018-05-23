@@ -21,6 +21,9 @@
 			</div>
 			<p class="content" th:utext="${post.body}">Post content</p>
 		</article>
+		<form th:object="${post.id}" method="post">
+			<input type="submit" value="Delete"/>
+		</form>
 	</main>
 
 <footer th:replace="layout :: site-footer"/>
