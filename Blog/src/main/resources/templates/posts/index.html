@@ -16,9 +16,10 @@
 				<span th:if="${p.author}" th:remove="tag">
 					<i>by</i>
 					<span th:text="${p.author.fullName != null ?
-								p.author.fullName : p.author.username}">Pavlo Kotelnytskyi</span>
+								p.author.fullName : p.author.username}">Pavlo K.</span>
 				</span>
 			</div>
+			<p class="content" th:utext="${p.body}">Post content</p>
 		</article>
 	</main>
 

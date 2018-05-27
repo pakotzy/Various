@@ -1,7 +1,11 @@
 package com.pakotzy.various.blog.services;
 
-public interface UserService {
-	boolean authenticate(String username, String password);
+import com.pakotzy.various.blog.models.User;
 
-	boolean register(String usernmae, String password);
+import java.util.List;
+
+public interface UserService {
+	User authenticate(String username, String password);
+	User register(String username, String password);
+	List<User> findAll();
 }

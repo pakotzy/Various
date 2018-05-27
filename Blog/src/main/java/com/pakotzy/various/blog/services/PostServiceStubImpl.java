@@ -46,8 +46,7 @@ public class PostServiceStubImpl implements PostService {
 
 	@Override
 	public Post create(Post post) {
-		post.setId(posts.stream().mapToLong(
-				Post::getId).max().getAsLong() + 1);
+		post.setId(posts.stream().mapToLong(Post::getId).max().getAsLong() + 1);
 		posts.add(post);
 		return post;
 	}

@@ -21,8 +21,13 @@
 			</div>
 			<p class="content" th:utext="${post.body}">Post content</p>
 		</article>
-		<form th:object="${post.id}" method="post">
+		<form style="display:inline-block" action="/posts/delete" method="post">
+			<input type="hidden" th:value="${post.id}" th:name="id"/>
 			<input type="submit" value="Delete"/>
+		</form>
+		<form style="display:inline-block" action="/posts/edit" method="post">
+			<input type="hidden" th:value="${post.id}" th:name="id"/>
+			<input type="submit" value="Edit"/>
 		</form>
 	</main>
 

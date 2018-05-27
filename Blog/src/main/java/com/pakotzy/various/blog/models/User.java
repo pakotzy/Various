@@ -10,10 +10,10 @@ public class User {
 	private String fullName;
 	private Set<Post> posts = new HashSet<>();
 
-	public User(long id, String username, String fullName) {
+	public User(long id, String username, String password) {
 		this.id = id;
 		this.username = username;
-		this.fullName = fullName;
+		this.passwordHash = password;
 	}
 
 	@Override
