@@ -3,7 +3,6 @@ package com.pakotzy.various.blog.services;
 import com.pakotzy.various.blog.models.Post;
 import com.pakotzy.various.blog.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;

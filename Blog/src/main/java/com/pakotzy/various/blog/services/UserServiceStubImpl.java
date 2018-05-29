@@ -10,9 +10,9 @@ import java.util.Objects;
 @Service
 public class UserServiceStubImpl implements UserService {
 	private List<User> users = new ArrayList<User>(){{
-		add(new User(0, "admin", "admin"));
-		add(new User(1, "user", "user"));
-		add(new User(2, "pakotzy", "password"));
+		add(new User(0L, "admin", "admin"));
+		add(new User(1L, "user", "user"));
+		add(new User(2L, "pakotzy", "password"));
 	}};
 
 	@Override
@@ -36,5 +36,25 @@ public class UserServiceStubImpl implements UserService {
 	@Override
 	public List<User> findAll() {
 		return users;
+	}
+
+	@Override
+	public User findById(Long id) {
+		return null;
+	}
+
+	@Override
+	public User create(User user) {
+		return null;
+	}
+
+	@Override
+	public User edit(User user) {
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+
 	}
 }

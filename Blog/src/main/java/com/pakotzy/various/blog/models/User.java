@@ -19,7 +19,7 @@ public class User {
 	@OneToMany(mappedBy = "author")
 	private Set<Post> posts = new HashSet<>();
 
-	public User(long id, String username, String password) {
+	public User(Long id, String username, String password) {
 		this.id = id;
 		this.username = username;
 		this.passwordHash = password;
