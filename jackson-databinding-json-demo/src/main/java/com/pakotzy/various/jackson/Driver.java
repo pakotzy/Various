@@ -11,11 +11,10 @@ public class Driver {
 			ObjectMapper mapper = new ObjectMapper();
 
 			// read JDON file to POJO
-			Student student = mapper.readValue(new File("data/sample-lite.json"), Student.class);
+			Student student = mapper.readValue(new File("data/sample-full.json"), Student.class);
 
 			// print data
-			System.out.println("First name = " + student.getFirstName());
-			System.out.println("Last name = " + student.getLastName());
+			System.out.println(student);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
