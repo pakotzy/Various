@@ -1,7 +1,10 @@
 package com.pakotzy.various.jackson;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Arrays;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
 	private Long id;
 	private String firstName;
