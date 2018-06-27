@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 @SpringBootApplication
-public class Sender {
+public class MessageProducer {
 	private static final String QUEUE_NAME ="WorkQueues";
 
 	private static List<String> generateMessages(int quantity) {
@@ -31,7 +31,7 @@ public class Sender {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(Sender.class, args);
+		SpringApplication.run(MessageProducer.class, args);
 
 		List<String> messages = generateMessages(10);
 

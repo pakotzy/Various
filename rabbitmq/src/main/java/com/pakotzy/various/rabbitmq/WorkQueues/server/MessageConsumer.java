@@ -9,11 +9,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 @SpringBootApplication
-public class ReceiverOne {
+public class MessageConsumer {
 	private static final String QUEUE_NAME ="WorkQueues";
 
 	public static void main(String[] args) {
-		SpringApplication.run(ReceiverOne.class, args);
+		SpringApplication.run(MessageConsumer.class, args);
 
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost("localhost");
